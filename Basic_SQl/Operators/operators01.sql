@@ -24,3 +24,4 @@ from emp_al
 
 SELECT first_name from emp_al
 WHERE salary % 5000 = 0
+
