@@ -52,3 +52,24 @@ SELECT RPAD("Hello",10,"*")
 
 SELECT RPAD(120,6,0)
 
+SELECT * from drives
+
+SELECT RIGHT(role_name,5) FROM  drives
+
+SELECT LEFT(role_name,5) from drives
+
+SELECT left(role_name,3) from drives
+WHERE drive_id = 214
+
+SELECT RIGHT(role_name,7) from drives
+
+SELECT RIGHT(role_name,7) from drives
+WHERE drive_id = 214
+
+SELECT ASCII("Sujith")
+
+SELECT ASCII("S")
+
+SELECT ASCII(role_name) from drives
+
+SELECT ASCII(SUBSTR(role_name,2,1)) from drives
