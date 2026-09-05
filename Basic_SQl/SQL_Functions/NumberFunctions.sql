@@ -73,3 +73,44 @@ SELECT TRUNCATE(1234.567,-2)
 
 SELECT TRUNCATE(123.456,0)
 
+SELECT * from product
+
+SELECT product_name, POWER(product_price,2)
+from product
+
+SELECT product_name, POW(product_price,2)
+from product
+
+SELECT product_name, pow(product_price,3) as "Cube of price"
+from product
+
+SELECT POWER(3.14,2) as "square of PI"
+
+SELECT SQRT(product_price) as "Square root of price"
+from product
+
+SELECT SQRT(25) as "sqrt of 25"
+
+SELECT POW(5,3)
+
+SELECT POW(3,4)
+
+SELECT POW(5,-2)
+
+SELECT SQRT(144) + POW(2,4) as "result"
+
+SELECT SQRT(81) + pow(3,3)
+
+SELECT product_name, product_price, CEIL(product_price) as "celing product price"
+from product
+
+SELECT CEIL(5.1)
+
+SELECT product_name, product_price, FLOOR(product_price)
+as "Product price from floor"
+from product
+
+SELECT FLOOR(7.1)
+
+SELECT product_name, FLOOR(SQRT(product_price))
+from product
