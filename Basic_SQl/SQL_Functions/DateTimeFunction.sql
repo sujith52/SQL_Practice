@@ -53,3 +53,53 @@ SELECT SYSDATE() as "right now date"
 
 SELECT NOW() as "now date"
 
+SELECT 
+TIMESTAMPDIFF(YEAR,'2026-09-06','2027-08-09') as "Year difference",
+TIMESTAMPDIFF(MONTH,'2026-09-06','2027-08-09') as "month difference",
+TIMESTAMPDIFF(day,'2026-09-06','2027-08-09') as "day difference"
+
+SELECT
+TIMESTAMPDIFF(YEAR,'2023-10-11','2024-10-11') as "year differences bro",
+TIMESTAMPDIFF(MONTH,'2023-10-11','2024-10-11') as "month differences bro",
+TIMESTAMPDIFF(DAY,'2023-10-11','2024-10-11') as " day differences bro"
+
+SELECT
+TIMESTAMPDIFF(HOUR,"2023-10-10 12:10:10","2023-10-11 12:10:10") as "hour diff",
+TIMESTAMPDIFF(MINUTE,"2023-10-10 12:10:10","2023-10-11 12:10:10") as "min diff",
+TIMESTAMPDIFF(SECOND,"2023-10-10 12:10:10","2023-10-11 12:10:10") as "sec diff"
+
+SELECT * from passenger_booking
+
+SELECT
+TIMESTAMPDIFF(DAY,booking_datetime,SYSDATE()) as "remmaining days" 
+from passenger_booking
+
+SELECT
+DATE_ADD('2023-10-11 12:03:10', INTERVAL 4 HOUR)
+as "added 4 hours to it "
+
+SELECT
+DATE_SUB('2023-10-11 12:04:10', INTERVAL 3 HOUR)
+as "removed 3 hours bro !"
+
+SELECT
+date_add('2023-10-11 12:01:01', INTERVAL 10 SECOND)
+as "added the 10 sec for the date",
+DATE_ADD('2023-10-11 12:01:01', interval 5 MINUTE)
+as " added the 5 mins "
+
+SELECT
+DATE_ADD('2023-10-10', interval 3 DAY) as "added 3 days",
+DATE_ADD('2023-10-10', interval 5 MONTH) as "added 5 month",
+DATE_ADD('2023-10-10', interval 2 YEAR) as "added 2 years"
+
+SELECT
+passenger_name, booking_datetime
+from passenger_booking
+WHERE TIMESTAMPDIFF(day,booking_datetime,SYSDATE()) > 16
+
+SELECT
+passenger_name, booking_datetime
+from passenger_booking
+WHERE DATE_ADD(booking_datetime, INTERVAL 16 day) = SYSDATE()
+
