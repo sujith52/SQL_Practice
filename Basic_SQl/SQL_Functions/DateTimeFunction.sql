@@ -103,3 +103,11 @@ passenger_name, booking_datetime
 from passenger_booking
 WHERE DATE_ADD(booking_datetime, INTERVAL 16 day) = SYSDATE()
 
+SELECT DATE(booking_datetime) from passenger_booking
+
+SELECT TIME(booking_datetime) from passenger_booking
+
+SELECT date_add('2023-01-01', INTERVAL -3 DAY)
+
+select DATE_ADD('2023-11-11',interval -3 YEAR)
+
