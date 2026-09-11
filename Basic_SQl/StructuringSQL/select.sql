@@ -19,3 +19,19 @@ from sales
 WHERE quantity > 10
 GROUP BY product_id
 ORDER BY AVG(unitprice)
+
+CREATE Table sales_data(
+    product_id int primary key,
+    product_name VARCHAR(50),
+    sale_date DATE,
+    sale_amount DECIMAL(10,2),
+    category varchar(50),
+    customer_id int UNIQUE,
+    customer_name VARCHAR(50)
+)
+
+select SUM(sale_amount) as "sale amount"
+from sales_data
+GROUP BY category
+HAVING sale_date = 2023
+
