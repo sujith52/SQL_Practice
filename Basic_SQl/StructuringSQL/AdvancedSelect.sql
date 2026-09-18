@@ -77,9 +77,7 @@ INSERT INTO orders VALUES
 (5,102,'2023-01-15',25.00),
 (6,101,'2023-01-15',100.00)
 
-SELECT * from customers
 
-SELECT * from orders
 
 
 SELECT id , name from customers
