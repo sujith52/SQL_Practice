@@ -125,3 +125,110 @@ SELECT emp_name,joining_date FROM employees
 ORDER BY joining_date DESC
 
 -- stopped at 42 question in my sql phase one !
+
+SELECT emp_name,salary from employees
+ORDER BY salary DESC
+LIMIT 5
+
+SELECT emp_name,salary from employees
+ORDER BY salary 
+LIMIT 3
+
+SELECT emp_name from employees
+ORDER BY emp_name 
+LIMIT 5
+
+SELECT emp_name,salary from employees
+ORDER BY salary DESC
+LIMIT 1
+
+INSERT INTO employees VALUES
+(113,"Sujith","IT","Developer",58000,"2024-06-01","madanapalle",105)
+
+INSERT INTO employees VALUES
+(114,"sreeja","IT","Developer",NULL,"2024-06-01","madanapalle",105)
+
+INSERT INTO employees VALUES
+(115,"latha","IT","Developer",68000,"2024-11-01","madanapalle",NULL)
+
+SELECT * from employees
+
+UPDATE employees SET salary = 60000
+WHERE emp_name = "sujith"
+
+UPDATE employees SET city = "Bangalore"
+WHERE emp_name = "anjali"
+
+UPDATE employees SET department = "Marketing"
+WHERE emp_id = 109
+
+UPDATE employees SET salary = salary * 1.10
+WHERE department = "IT"
+
+UPDATE employees SET designation = "Junior Executive"
+WHERE salary < 40000
+
+SELECT * from employees
+
+ROLLBACK
+
+DELETE from employees 
+WHERE emp_id = 113
+
+DELETE from employees
+WHERE department = "Marketing"
+
+SELECT emp_name, salary from employees
+WHERE salary < 40000
+
+DELETE from employees
+WHERE salary < 40000
+
+SELECT emp_name, salary from employees
+WHERE salary is NULL
+
+SELECT emp_name, salary from employees
+WHERE salary is not NULL
+
+SELECT emp_name from employees
+WHERE joining_date is NULL
+
+SELECT emp_name from employees
+WHERE manager_id is NULL
+
+SELECT emp_name,COALESCE(salary,0) from employees
+
+SELECT emp_name, coalesce(joining_date,"Not provided") 
+from employees
+
+SELECT emp_name , coalesce(manager_id,"No Manager")
+from employees
+
+SELECT emp_name,salary,department from employees
+WHERE department = "IT"
+ORDER BY salary DESC
+LIMIT 3
+
+SELECT emp_name,salary,department from employees
+WHERE department = "IT" or department = "HR" 
+and salary > 45000
+
+SELECT emp_name,salary,city from employees
+WHERE city = "bangalore" or "chennal"
+and salary BETWEEN 40000 and 80000
+
+SELECT emp_name from employees
+WHERE emp_name LIKE "s%" or emp_name LIKE "%a"
+
+SELECT emp_name,salary,department from employees
+WHERE department NOT in("Hr") 
+and salary is NOT NULL
+and salary > 45000
+
+SELECT emp_name,salary,department,city from employees
+WHERE department in("it","hr","finance")
+and city in ("bangalore","chennai","hyderabad")
+and salary BETWEEN 40000 and 80000
+and salary is not NULL
+ORDER BY salary DESC
+LIMIT 5
