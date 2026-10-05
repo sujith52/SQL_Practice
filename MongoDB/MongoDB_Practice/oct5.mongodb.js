@@ -168,3 +168,86 @@ db.employees.updateOne(
 )
 
 db.mentors.find()
+
+use('kodnest')
+
+db.employees.deleteOne(
+    {emp_name:'chandana'}
+)
+
+db.employees.insertMany([
+    {
+        emp_name:'cark',
+        role:'superman'
+    },
+    {
+        emp_name:'bruce wane',
+        role:'batman'
+    }
+])
+
+db.employees.deleteMany({emp_name:'cark'})
+
+db.employees.deleteMany(
+    {$gt:{emp_sal:100000}}
+)
+
+db.createCollection('dummy')
+
+db.dummy.drop()
+
+db.employees.find()
+
+use('kodnest')
+
+db.createCollection('trainers')
+
+db.trainers.insertMany([
+    {
+        _id:101,
+        name:'sujith',
+        exp:3
+    },
+    {
+        _id:102,
+        name:'sreeja',
+        exp:5
+    },
+    {
+        _id:103,
+        name:'sandessh',
+        exp:10
+    },
+    {
+        _id:104,
+        name:'gamana',
+        exp:4
+    },
+])
+
+db.createCollection('tech')
+
+db.tech.insertMany([
+    {
+        _id:10,
+        name:'java',
+        modules:['fundamentals','oops','jdbc','spring boot','marven']
+    },
+    {
+        _id:20,
+        name:'db',
+        modules:['mysql','oracle','mongodb']
+    },
+    {
+        _id:30,
+        name:'front end',
+        modules:['html','css','js','react','node js']
+    }
+])
+
+db.trainers.find()
+
+db.trainers.updateOne({_id:104},{$set:{
+    tech_id:10
+}})
+
